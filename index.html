@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fefefe;
+        }
+
+        .question h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .question ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .question ul li {
+            margin-bottom: 5px;
+        }
+
+        .correct {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Search Ona Tili</h1>
+        <input type="text" id="search" placeholder="Search for a question..." oninput="filterQuestions()">
+        <div id="questions">
+            <div class="question">
+                <h2>1. Muhammad s.a.v. qachon o’zini Allohning rasuli (elchisi) deb e’lon qildi?</h2>
+                <ul>
+                    <li>A. 610 y</li>
+                    <li>B. 622 y</li>
+                    <li>C. 570 y</li>
+                    <li>D. 632 y</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 610 y</p>
+            </div>
+            
+            <div class="question">
+                <h2>2. Ja’fariya qaysi yo’nalishga mansub?</h2>
+                <ul>
+                    <li>A. Shia</li>
+                    <li>B. Sunniylik</li>
+                    <li>C. Xavorijlar</li>
+                    <li>D. Mutaziliya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Shia</p>
+            </div>
+            
+            <div class="question">
+                <h2>3. Buddizm dini qachon paydo bo’ldi?</h2>
+                <ul>
+                    <li>A. Milodimizdan avv. V asrda</li>
+                    <li>B. Milodimizdan avv. VI-V asrda</li>
+                    <li>C. Milodimizning I asrida</li>
+                    <li>D. Milodimizgacha XIII asrda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Milodimizdan avv. VI-V asrda</p>
+            </div>
+            
+            <div class="question">
+                <h2>5. Islom dinida Xulofoi Roshidinlar ko`rsatilgan javobni toping?</h2>
+                <ul>
+                    <li>A. Abu Bakr, Umar, Usmon, Ali</li>
+                    <li>B. Muhammad, Ali, Xasan, Xusan</li>
+                    <li>C. Abu Xurayro, Ibn Hanbal, Ibn Xoshim</li>
+                    <li>D. Ibrohim, Muso, Iso, Dovud</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Abu Bakr, Umar, Usmon, Ali</p>
+            </div>
+            
+            <div class="question">
+                <h2>6. Vatikan davlati nasroniylikdagi qaysi oqimning markazi hisoblanadi?</h2>
+                <ul>
+                    <li>A. Katolikning</li>
+                    <li>B. Pravoslavlikning</li>
+                    <li>C. Protestantlikning</li>
+                    <li>D. Baptistlikning</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Katolikning</p>
+            </div>
+            
+            <div class="question">
+                <h2>7. Qur’onda nechta sura bor?</h2>
+                <ul>
+                    <li>A. 114</li>
+                    <li>B. 110</li>
+                    <li>C. 115</li>
+                    <li>D. 286</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 114</p>
+            </div>
+            
+            <div class="question">
+                <h2>8. Buddizmda ishongan kishining asosiy maqsadi nima?</h2>
+                <ul>
+                    <li>A. «Muqaddas qadamjo»larga sig’inish</li>
+                    <li>B. Rohiblikni qabul qilish</li>
+                    <li>C. Qayta tug`ilish zanjiridan o’tish</li>
+                    <li>D. Ilohlarga sig’inish</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Qayta tug`ilish zanjiridan o’tish</p>
+            </div>
+            
+            <div class="question">
+                <h2>9. Buddaviylik dinining asoschisi Siddxarta Gautama kim bo`lgan?</h2>
+                <ul>
+                    <li>A. Dehqon</li>
+                    <li>B. Cho`pon</li>
+                    <li>C. Savdogar</li>
+                    <li>D. Shahzoda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Shahzoda</p>
+            </div>
+            
+            <div class="question">
+                <h2>10. Quyidagilardan qaysi biri dinning jamiyatda bajaradigan vazifalaridan emas?</h2>
+                <ul>
+                    <li>A. Tasalli berish, to`ldirish</li>
+                    <li>B. Qonuniylashtirish</li>
+                    <li>C. Boshqarish</li>
+                    <li>D. Qiynash</li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Qiynash</p>
+            </div>
+            
+            <div class="question">
+                <h2>11. Xristianlikning muqaddas manbasi?</h2>
+                <ul>
+                    <li>A. Injil</li>
+                    <li>B. Qadimgi ahd</li>
+                    <li>C. Talmud</li>
+                    <li>D. Zabur</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Injil</p>
+            </div>
+            
+            <div class="question">
+                <h2>12. Islom dini qachon paydo bo’ldi?</h2>
+                <ul>
+                    <li>A. Milodgacha V asrda</li>
+                    <li>B. Milodning I asrida</li>
+                    <li>C. Milodning VII asrida</li>
+                    <li>D. Milodning VI asrida</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Milodning VII asrida</p>
+            </div>
+            
+            <div class="question">
+                <h2>13. O‘zining kelib chiqishini o‘simliklar yoki hayvonlarning ma’lum bir turlaridan kelib chiqqan deb hisoblovchi eng qadimgi diniy ta’limot qanday nomlanadi?</h2>
+                <ul>
+                    <li>A. Totemizm</li>
+                    <li>B. Fetishizm</li>
+                    <li>C. Animizm</li>
+                    <li>D. Magiya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Totemizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>14. O’zbеkistоnda qancha kоnfеssiya mavjud?</h2>
+                <ul>
+                    <li>A. 16 ta</li>
+                    <li>B. 18 ta</li>
+                    <li>C. 20 ta</li>
+                    <li>D. 15 ta</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 16 ta</p>
+            </div>
+            
+            <div class="question">
+                <h2>15. Islom dinining asosiy bayramlari qaysilar?</h2>
+                <ul>
+                    <li>A. Pasxa, rojdestvo</li>
+                    <li>B. Xatna, nikoh</li>
+                    <li>C. Navro’z, mavlud</li>
+                    <li>D. Ramazon hayiti, Qurbon hayiti</li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Ramazon hayiti, Qurbon hayiti</p>
+            </div>
+            
+            <div class="question">
+                <h2>16. S. Gautama necha yoshida saroyni tark qiladi?</h2>
+                <ul>
+                    <li>A. 30 yosh</li>
+                    <li>B. 33 yosh</li>
+                    <li>C. 40 yosh</li>
+                    <li>D. 20 yosh</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 30 yosh</p>
+            </div>
+            
+            <div class="question">
+                <h2>17. Bibliyaning xristianlikka oid qismi qanday nomlanadi?</h2>
+                <ul>
+                    <li>A. Yangi ahd</li>
+                    <li>B. Eski ahd</li>
+                    <li>C. Injil</li>
+                    <li>D. Tavrot</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Yangi ahd</p>
+            </div>
+            
+            <div class="question">
+                <h2>18. Ilk ibtidoiy diniy tasavvurlarda sehrgarlik qanday nomlangan?</h2>
+                <ul>
+                    <li>A. Totemizm</li>
+                    <li>B. Fetishizm</li>
+                    <li>C. Animizm</li>
+                    <li>D. Magiya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Magiya</p>
+            </div>
+            
+            <div class="question">
+                <h2>19. Muhammad s.a.v. pay`gambar tug`ilgan kuniga bag’ishlangan bayramning nomi qanday ataladi?</h2>
+                <ul>
+                    <li>A. Xatna</li>
+                    <li>B. Qurbon hayit</li>
+                    <li>C. Ramazon hayit</li>
+                    <li>D. Mavlud</li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Mavlud</p>
+            </div>
+            
+            <div class="question">
+                <h2>20. “Xushxabar” deb tarjima qilingan nasroniylikning muqaddas kitoblaridan biri…?</h2>
+                <ul>
+                    <li>A. Injil</li>
+                    <li>B. Muqaddas yozuvlar</li>
+                    <li>C. Apokalipsis</li>
+                    <li>D. Tavrot</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Injil</p>
+            </div>
+            
+            <div class="question">
+                <h2>21. Din so`zining ma’nosi qanday?</h2>
+                <ul>
+                    <li>A. Quvonch</li>
+                    <li>B. Ishonch</li>
+                    <li>C. Ezgulik</li>
+                    <li>D. Mukofot</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Ishonch</p>
+            </div>
+            
+            <div class="question">
+                <h2>22. S. Gautama haqiqatni anglashda necha kun daraxt tagida o’tirdi?</h2>
+                <ul>
+                    <li>A. 44 kun</li>
+                    <li>B. 49 kun</li>
+                    <li>C. 55 kun</li>
+                    <li>D. 30 kun</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. 49 kun</p>
+            </div>
+            
+            <div class="question">
+                <h2>23. Islom dinining Muqaddas kitobi nima deb ataladi?</h2>
+                <ul>
+                    <li>A. Avesto</li>
+                    <li>B. Qur’on</li>
+                    <li>C. Tripitaka</li>
+                    <li>D. Tavrot</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Qur’on</p>
+            </div>
+            
+            <div class="question">
+                <h2>24. Islomda ro‘za necha kun tutiladi?</h2>
+                <ul>
+                    <li>A. 70 kun</li>
+                    <li>B. 33 kun</li>
+                    <li>C. 30 kun</li>
+                    <li>D. 40 kun</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. 30 kun</p>
+            </div>
+            
+            <div class="question">
+                <h2>25. Buddaviylik dinida inson erishishi mumkin bo`lgan oliy daraja qanaday nomlanadi?</h2>
+                <ul>
+                    <li>A. Rohib</li>
+                    <li>B. Ruhoniy</li>
+                    <li>C. Ravvin</li>
+                    <li>D. Nirvana</li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Nirvana</p>
+            </div>
+            
+            <div class="question">
+                <h2>26. Odamlar guruhi (urug’i, qabilasi) bilan hayvon va o’simliklarning muayyan turi o’rtasida g’ayri tabiiy aloqadorlik, qon-qarindoshlik borligi to’g’risidagi ishonch (e’tiqod) qaysi dinning xususiyati?</h2>
+                <ul>
+                    <li>A. Fetishizm</li>
+                    <li>B. Totemizm</li>
+                    <li>C. Animizm</li>
+                    <li>D. Magiya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Totemizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>27. Qaysi din ta`limotida inson vafotidan keyin boshqa narsa ko`rinishida qayta tug`iladi?</h2>
+                <ul>
+                    <li>A. Buddaviylik</li>
+                    <li>B. Zardushtiylik</li>
+                    <li>C. Yahudiylik</li>
+                    <li>D. Xristianlik</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Buddaviylik</p>
+            </div>
+            
+            <div class="question">
+                <h2>28. E’tiqod qiluvchilarning soniga ko‘ra eng katta jahon dini qaysi?</h2>
+                <ul>
+                    <li>A. Xristianlik</li>
+                    <li>B. Buddizm</li>
+                    <li>C. Islom</li>
+                    <li>D. Hinduiylik</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Xristianlik</p>
+            </div>
+            
+            <div class="question">
+                <h2>29. Islom dinida qanday yo’nalishlari bor?</h2>
+                <ul>
+                    <li>A. Modernizm va fundamentalizm</li>
+                    <li>B. Ismoiliylik va vahobiylik</li>
+                    <li>C. Sunniylik va shialik</li>
+                    <li>D. Bahoiylik va bobiylik</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Sunniylik va shialik</p>
+            </div>
+            
+            <div class="question">
+                <h2>30. Buddaviylikda Budda o`tirgan daraxt qanday nomlandi?</h2>
+                <ul>
+                    <li>A. Trishna</li>
+                    <li>B. Mayya</li>
+                    <li>C. Botxa</li>
+                    <li>D. Gautama</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Botxa</p>
+            </div>
+            
+            <div class="question">
+                <h2>31. Xristianlikning qaysi oqimi Gʼarbiy Yevropa va Lotin Amerikasi-da eng koʼp tarqalgan?</h2>
+                <ul>
+                    <li>A. Katolitsizm</li>
+                    <li>B. Pravoslavie</li>
+                    <li>C. Baptizm</li>
+                    <li>D. Protestantsizm</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Katolitsizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>32. Dinning ibtidoiy shakllari qaysilar?</h2>
+                <ul>
+                    <li>A. Magiya, iudaizm, jaynizm, zorastrizm</li>
+                    <li><strong>B. Fetishizm, totemizm, magiya, animizm</strong></li>
+                    <li>C. Fetishizm, buddizm, qabila boshliqlarining shaxsiga sig’inish</li>
+                    <li>D. Xristianlik, totemizm, sintoizm, tabiatni ilohiylashtirish</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Fetishizm, totemizm, magiya, animizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>33. Buddaga dastlab necha kishi hamroh bo`ladi?</h2>
+                <ul>
+                    <li><strong>A. 5 kishi</strong></li>
+                    <li>B. 6 kishi</li>
+                    <li>C. 7 kishi</li>
+                    <li>D. 8 kishi</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 5 kishi</p>
+            </div>
+            
+            <div class="question">
+                <h2>34. Xristianlik dinida protestantizm oqimi qachon ajralib chiqqan?</h2>
+                <ul>
+                    <li><strong>A. 1517 yilda</strong></li>
+                    <li>B. 1054 yilda</li>
+                    <li>C. 1534 yilda</li>
+                    <li>D. 1532 yilda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 1517 yilda</p>
+            </div>
+            
+            <div class="question">
+                <h2>35. Odamlarga, narsalarga va atrof olamdagi hodisalarga g’ayritabiiy yo’l bilan ta’sir qilish mumkinligiga bo’lgan ishonch asosidagi e’tiqodlar va maroismlar qaysi dinning xususiyati?</h2>
+                <ul>
+                    <li>A. Totemizm</li>
+                    <li>B. Fetishizm</li>
+                    <li><strong>C. Magiya</strong></li>
+                    <li>D. Animizm</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Magiya</p>
+            </div>
+            
+            <div class="question">
+                <h2>36. Buddaviylik dinida azoblardan qutulish uchun inson qanday holatga erishishi kerak?</h2>
+                <ul>
+                    <li>A. Meditatsiya</li>
+                    <li>B. Donolik</li>
+                    <li>C. Trishna</li>
+                    <li><strong>D. Nirvana</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Nirvana</p>
+            </div>
+            
+            <div class="question">
+                <h2>37. “Yetti sirli marosim” qaysi dinga tegishli?</h2>
+                <ul>
+                    <li><strong>A. Xristianlik</strong></li>
+                    <li>B. Hinduiylik</li>
+                    <li>C. Buddizm</li>
+                    <li>D. Sintoiylik</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Xristianlik</p>
+            </div>
+            
+            <div class="question">
+                <h2>38. Dinning kelib chiqishi haqidagi asosiy qarashlar quyidagilardan qaysi biri?</h2>
+                <ul>
+                    <li><strong>A. Diniy va ilmiy</strong></li>
+                    <li>B. Idealistik va materialistik</li>
+                    <li>C. Nasroniylarcha va musulmonlarcha</li>
+                    <li>D. Metafizik va dialektik</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Diniy va ilmiy</p>
+            </div>
+            
+            <div class="question">
+                <h2>39. Vijdоn erkinligi va diniy tashkilоtlar to’g’risidagi qоnun qachоn qabul qilingan?</h2>
+                <ul>
+                    <li>A. 2020-yil 1-avgust</li>
+                    <li>B. 2019-yil 1-sentabr</li>
+                    <li>C. 2022-yil 14-iyun</li>
+                    <li><strong>D. 2021-yil 4 may</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. 2021-yil 4 may</p>
+            </div>
+            
+            <div class="question">
+                <h2>39. Provaslav cherkovi qachon mustaqil bo‘lgan?</h2>
+                <ul>
+                    <li><strong>A. 1054-yilda</strong></li>
+                    <li>B. 395-yilda</li>
+                    <li>C. 1448-yilda</li>
+                    <li>D. 988-yilda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 1054-yilda</p>
+            </div>
+            
+            <div class="question">
+                <h2>40. Xristianlik dinida eng oxirida vujudga kelgan yo’nalish qaysi?</h2>
+                <ul>
+                    <li><strong>A. Protestantlik</strong></li>
+                    <li>B. Katolik</li>
+                    <li>C. Pravoslav</li>
+                    <li>D. Baptizm</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Protestantlik</p>
+            </div>
+            
+            <div class="question">
+                <h2>41. Har xil buyumlar yoki tumorlarni balo-qazolardan asrovchi yoki baxt-saodatga erishtiruvchi eng qadimgi diniy ta’limot qanday nomlanadi?</h2>
+                <ul>
+                    <li>A. Totemizm</li>
+                    <li><strong>B. Fetishizm</strong></li>
+                    <li>C. Animizm</li>
+                    <li>D. Magiya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Fetishizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>42. Sintoiylik dini qaysi davlatda vujudga kelgan?</h2>
+                <ul>
+                    <li><strong>A. Yaponiya</strong></li>
+                    <li>B. Xitoy</li>
+                    <li>C. Hindiston</li>
+                    <li>D. Tibet</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Yaponiya</p>
+            </div>
+            
+            <div class="question">
+                <h2>43. Yahudiylikda ibodatxona qanday nomlanadi?</h2>
+                <ul>
+                    <li>A. Masjid</li>
+                    <li>B. Cherkov</li>
+                    <li><strong>C. Sinagoga</strong></li>
+                    <li>D. Iparxiya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Sinagoga</p>
+            </div>
+            
+            <div class="question">
+                <h2>44. Jahonda e’tiqod qiluvchilari soni jihatidan eng katta milliy din qaysi?</h2>
+                <ul>
+                    <li><strong>A. Hinduizm</strong></li>
+                    <li>B. Iudaizm</li>
+                    <li>C. Sintoizm</li>
+                    <li>D. Daosizm</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Hinduizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>45. Konfutsiy ta’limotida qaysi muammolar asosiy o’rin tutadi?</h2>
+                <ul>
+                    <li><strong>A. Ijtimoiy-axloqiy</strong></li>
+                    <li>B. Falsafiy</li>
+                    <li>C. Estetik</li>
+                    <li>D. Siyosiy</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Ijtimoiy-axloqiy</p>
+            </div>
+            
+            <div class="question">
+                <h2>46. Daosizm qayerda paydo bo`lgan?</h2>
+                <ul>
+                    <li>A. Yaponiya</li>
+                    <li><strong>B. Xitoy</strong></li>
+                    <li>C. Hindiston</li>
+                    <li>D. Tibet</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Xitoy</p>
+            </div>
+            
+            <div class="question">
+                <h2>47. Konfutsiychilikning asoschisi kim?</h2>
+                <ul>
+                    <li>A. Pan Gu</li>
+                    <li>B. Lao Szi</li>
+                    <li><strong>C. Kun Szi</strong></li>
+                    <li>D. Shan Di</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Kun Szi</p>
+            </div>
+            
+            <div class="question">
+                <h2>48. Sintoizmning bosh xudosi kim?</h2>
+                <ul>
+                    <li><strong>A. Quyosh ma’budasi Amaterasu</strong></li>
+                    <li>B. Oxirgi paygambar Jina</li>
+                    <li>C. Saqlovchi xudo Vishnu</li>
+                    <li>D. Yaratuvchi xudo Braxma</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Quyosh ma’budasi Amaterasu</p>
+            </div>
+            
+            <div class="question">
+                <h2>49. Jaynizm qaysi davlatning milliy dinidir?</h2>
+                <ul>
+                    <li>A. Yaponiyaning</li>
+                    <li>B. Xitoyning</li>
+                    <li><strong>C. Hindistonning</strong></li>
+                    <li>D. Mongoliyaning</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Hindistonning</p>
+            </div>
+            
+            <div class="question">
+                <h2>50. Yahudiylik ta`limotida ular bilishi kerak bo`lgan ko`rsatmalar qanchani tashkil etadi?</h2>
+                <ul>
+                    <li><strong>A. 613 ta</strong></li>
+                    <li>B. 546 ta</li>
+                    <li>C. 248</li>
+                    <li>D. 365</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 613 ta</p>
+            </div>
+            
+            <div class="question">
+                <h2>51. Yahudiylik ta`limotida ular bilishi kerak bo`lgan taqiqlar qanchani tashkil etadi?</h2>
+                <ul>
+                    <li>A. 613 ta</li>
+                    <li>B. 546 ta</li>
+                    <li>C. 248</li>
+                    <li><strong>D. 365 ta</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. 365 ta</p>
+            </div>
+            
+            <div class="question">
+                <h2>52. Inson o‘zini o‘rab turgan muhitda ruhlarning mavjudligiga ishonuvchi eng qadimgi diniy ta’limot qanday nomlanadi?</h2>
+                <ul>
+                    <li>A. Totemizm</li>
+                    <li>B. Fetishizm</li>
+                    <li><strong>C. Animizm</strong></li>
+                    <li>D. Magiya</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Animizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>53. Hinduizm dinidagi oliy xudoni toping?</h2>
+                <ul>
+                    <li>A. Shiva</li>
+                    <li><strong>B. Braxma</strong></li>
+                    <li>C. Vishnu</li>
+                    <li>D. Sinto</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Braxma</p>
+            </div>
+            
+            <div class="question">
+                <h2>54. Konfutsiyning shogirdlari qancha bo`lgan?</h2>
+                <ul>
+                    <li><strong>A. 3 ming</strong></li>
+                    <li>B. 72 ta</li>
+                    <li>C. 2,5 ming</li>
+                    <li>D. Shogirdlari bo`lmagan</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 3 ming</p>
+            </div>
+            
+            <div class="question">
+                <h2>55. Quyidagi milliy dinlarning qaysi samoviy dinlardan hisoblanadi?</h2>
+                <ul>
+                    <li>A. Hinduizm</li>
+                    <li>B. Sintoizm</li>
+                    <li>C. Konfutsiylik</li>
+                    <li><strong>D. Yahudiylik</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Yahudiylik</p>
+            </div>
+            
+            <div class="question">
+                <h2>56. Avesto qaysi dinning muqaddas kitobi hisoblanadi?</h2>
+                <ul>
+                    <li>A. Islom</li>
+                    <li>B. Xristianlik</li>
+                    <li>C. Yahudiylik</li>
+                    <li><strong>D. Zarfdushtiylik</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Zarfdushtiylik</p>
+            </div>
+            
+            <div class="question">
+                <h2>57. Sinagoga so‘zining lug‘aviy ma'nosi nima?</h2>
+                <ul>
+                    <li>a) yig‘ilish</li>
+                    <li><strong>b) ibodatxona</strong></li>
+                    <li>c) alohida ajratilgan joy</li>
+                    <li>D) marosim</li>
+                </ul>
+                <p class="correct">To'g'ri javob: b) ibodatxona</p>
+            </div>
+            
+            <div class="question">
+                <h2>58. G`arb nazariyasiga ko`ra zardushtiylik dini qayerda vujudga kelgan?</h2>
+                <ul>
+                    <li><strong>A. Eronda</strong></li>
+                    <li>B. Xorazmda</li>
+                    <li>C. Arabistonda</li>
+                    <li>D. Pokistonda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Eronda</p>
+            </div>
+            
+            <div class="question">
+                <h2>59. Sharq nazariyasiga ko`ra zardushtiylik dini qayerda vujudga kelgan?</h2>
+                <ul>
+                    <li>A. Eronda</li>
+                    <li><strong>B. Xorazmda</strong></li>
+                    <li>C. Arabistonda</li>
+                    <li>D. Pokistonda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Xorazmda</p>
+            </div>
+            
+            <div class="question">
+                <h2>60. Zardushtiylikning asosiy ta`limotiga aloqador bo`lmagan javobni toping?</h2>
+                <ul>
+                    <li>A. Ezgu fikr</li>
+                    <li>B. Ezgu so`z</li>
+                    <li>C. Ezgu amal</li>
+                    <li><strong>D. Ezgu niyat</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Ezgu niyat</p>
+            </div>
+            
+            <div class="question">
+                <h2>61. Quyidagilarning qaysi biri zardushtiylikdagi muqaddas 4 unsurga kirmaydi?</h2>
+                <ul>
+                    <li>A. suv</li>
+                    <li>B. olov</li>
+                    <li><strong>C. bulut</strong></li>
+                    <li>D. havo</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. bulut</p>
+            </div>
+            
+            <div class="question">
+                <h2>62. Xizbut-taxrir oqimiga qachon asos solingan?</h2>
+                <ul>
+                    <li>A. 1951-yil</li>
+                    <li>B. 1952-yil</li>
+                    <li><strong>C. 1953-yil</strong></li>
+                    <li>D. 1954-yil</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. 1953-yil</p>
+            </div>
+            
+            <div class="question">
+                <h2>63. 12 ming qoramol terisiga yozilgan muqaddas kitob?</h2>
+                <ul>
+                    <li><strong>A. Avesto</strong></li>
+                    <li>B. Injil</li>
+                    <li>C. Tavrot</li>
+                    <li>D. Qur`on</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Avesto</p>
+            </div>
+            
+            <div class="question">
+                <h2>64. Movarounnahrlik allomalarning qaysi biri Avestoning “30 nask” ligi to`g`risidagi ma`lumotlarni keltirib o`tgan?</h2>
+                <ul>
+                    <li>A. Ibn Sino</li>
+                    <li>B. Xorazmiy</li>
+                    <li><strong>C. Beruniy</strong></li>
+                    <li>D. Farg`oniy</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Beruniy</p>
+            </div>
+            
+            <div class="question">
+                <h2>65. Zardushtiylikdagi kunlik ibodatlar soni qancha?</h2>
+                <ul>
+                    <li>A. 3 ta</li>
+                    <li>B. 4 ta</li>
+                    <li><strong>C. 5 ta</strong></li>
+                    <li>D. 6 ta</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. 5 ta</p>
+            </div>
+            
+            <div class="question">
+                <h2>66. Zardushtiylar orasida 3 yil yashab, ularning tarixini o`rgangan olim kim?</h2>
+                <ul>
+                    <li>A. Zamaxshariy</li>
+                    <li>B. Volter</li>
+                    <li><strong>C. Dyuperron</strong></li>
+                    <li>D. B. Axmedov</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Dyuperron</p>
+            </div>
+            
+            <div class="question">
+                <h2>67. Dinning jamiyatdagi vazifalari mazmunini qaysi qatorda noto‘g‘ri ko‘rsatilgan?</h2>
+                <ul>
+                    <li>A. kompensator - tasalli beruvchilik</li>
+                    <li>B. integrator - birlashtiruvchilik</li>
+                    <li><strong>C. legitimizatsiya - nazorat qiluvchilik</strong></li>
+                    <li>D. kommunikativ - bog‘lashtiruvchi</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. legitimizatsiya - nazorat qiluvchilik</p>
+            </div>
+            
+            <div class="question">
+                <h2>68. Qaysi dinda vafot etganlarning suyaklari maxsus idishda saqlanadi?</h2>
+                <ul>
+                    <li><strong>A. Zardushtiylik</strong></li>
+                    <li>B. Xristianlik</li>
+                    <li>C. Hinduizm</li>
+                    <li>D. Yahudiylik</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Zardushtiylik</p>
+            </div>
+            
+            <div class="question">
+                <h2>69. «Hamma uchun vijdon erkinligi kafolatlanadi. Har bir inson xohlagan dinga e'tiqod qilish yoki hech qaysi dinga e'tiqod qilmaslik huquqiga ega. Diniy qarashlarni majburan singdirishga yo‘l qo‘yilmaydi». Bu qonun konstitutsiyamizning qaysi moddada keltirilgan?</h2>
+                <ul>
+                    <li><strong>A. 35-modda</strong></li>
+                    <li>B. 57-modda</li>
+                    <li>C. 61-modda</li>
+                    <li>D. 18-modda</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 35-modda</p>
+            </div>
+            
+            <div class="question">
+                <h2>70. “Ettinchi kun adventistlari” oqimi nechanchi yil tuzilgan?</h2>
+                <ul>
+                    <li><strong>A. 1844</strong></li>
+                    <li>B. 1860</li>
+                    <li>C. 1863</li>
+                    <li>D. 1850</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 1844</p>
+            </div>
+            
+            <div class="question">
+                <h2>71. Quyidagi harakatlardan qaysi biri Eronda vujudga kelgan?</h2>
+                <ul>
+                    <li>A. Marifatchilar</li>
+                    <li>B. Baxshillochilar</li>
+                    <li>C. Shohidiylar</li>
+                    <li><strong>D. Bahoiylar</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Bahoiylar</p>
+            </div>
+            
+            <div class="question">
+                <h2>72. ISESCO tomonidan Toshkent shahriga “Islom madaniyatining poytaxti" maqomi berildi?</h2>
+                <ul>
+                    <li><strong>A. 2007</strong></li>
+                    <li>B. 2008</li>
+                    <li>C. 2009</li>
+                    <li>D. 2010</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 2007</p>
+            </div>
+            
+            <div class="question">
+                <h2>73. Quyidagilardan qaysi biri Hinduizmdagi ilohlardan emas?</h2>
+                <ul>
+                    <li>A. Shiva</li>
+                    <li>B. Vishnu</li>
+                    <li>C. Braxma</li>
+                    <li><strong>D. Sinto</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Sinto</p>
+            </div>
+            
+            <div class="question">
+                <h2>74. Qaysi ta’limot 24 ta Payg’ambar yoki avliyo tomonidan asos solingan?</h2>
+                <ul>
+                    <li>A. Sikhiylik</li>
+                    <li>B. Veda</li>
+                    <li><strong>C. Jaynizm</strong></li>
+                    <li>D. Daosizm</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Jaynizm</p>
+            </div>
+            
+            <div class="question">
+                <h2>75. Sintoizm dini qayerda vujudga kelgan?</h2>
+                <ul>
+                    <li>A. Korea</li>
+                    <li>B. Xitoy</li>
+                    <li><strong>C. Yaponiya</strong></li>
+                    <li>D. Eron</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Yaponiya</p>
+            </div>
+            
+            <div class="question">
+                <h2>76. Konfutsiylikka kim asos solgan?</h2>
+                <ul>
+                    <li><strong>A. Kun szi</strong></li>
+                    <li>B. Min</li>
+                    <li>C. Kim in</li>
+                    <li>D. Lao Szi</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Kun szi</p>
+            </div>
+            
+            <div class="question">
+                <h2>77. O’zbekistonda diniy tashkilotlar, muassasalar qaysi organ tomonidan ro’yxatga olinadi?</h2>
+                <ul>
+                    <li><strong>A. Adliya vazirligi</strong></li>
+                    <li>B. Mudofa vazirligi</li>
+                    <li>C. Ichki ishlar vazirligi</li>
+                    <li>D. Tashqi ishlar vazirligi</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Adliya vazirligi</p>
+            </div>
+            
+            <div class="question">
+                <h2>78. O’zbekiston Respublikasi Vazirlar Mahkamasi huzuridagi O’zbekiston Islom sivilizatsiyasi markazi qachon tashkil etildi?</h2>
+                <ul>
+                    <li>A. 2018</li>
+                    <li><strong>B. 2017</strong></li>
+                    <li>C. 2016</li>
+                    <li>D. 2015</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. 2017</p>
+            </div>
+            
+            <div class="question">
+                <h2>79. Hоzir BMTning tеrrоrizmgа qаrshi turishgа qаrаtilgаn nechta hujjat bor?</h2>
+                <ul>
+                    <li><strong>A. 13 ta</strong></li>
+                    <li>B. 14 ta</li>
+                    <li>C. 15 ta</li>
+                    <li>D. 16 ta</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. 13 ta</p>
+            </div>
+            
+            <div class="question">
+                <h2>80. Nabiy bilan rasulni оrasidagi farqni toping?</h2>
+                <ul>
+                    <li><strong>A. Nabiy avvalgi shariatni davom ettiradi, rasulga yangi shariat tushadi.</strong></li>
+                    <li>B. Nabiy yangi shariat tushadi. Rasulga avvalgi shariatni davom etadi</li>
+                    <li>C. Nabiyga rasulga ham yangi shariat tushadi</li>
+                    <li>D. Nabiy ham rasul ham avvalgi shariatni davom etadi</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Nabiy avvalgi shariatni davom ettiradi, rasulga yangi shariat tushadi.</p>
+            </div>
+            
+            <div class="question">
+                <h2>81. Insоn taqdirini o’zi bеlgilaydi dеydigan tоifani nоmini ayting?</h2>
+                <ul>
+                    <li><strong>A. Qadariylar.</strong></li>
+                    <li>B. Jafariylar</li>
+                    <li>C. Salafiylar</li>
+                    <li>D. Xorijiylar</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Qadariylar.</p>
+            </div>
+            
+            <div class="question">
+                <h2>82. Markaziy Osiyoda qaysi mazhab keng tarqalgan?</h2>
+                <ul>
+                    <li>A. Molikiy;</li>
+                    <li>B. Hanbaliy;</li>
+                    <li>C. Shofeiy;</li>
+                    <li><strong>D. Hanafiy.</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Hanafiy.</p>
+            </div>
+            
+            <div class="question">
+                <h2>83. Quyidagi qaysi norasmiy diniy harakat faoliyati mustaqillik yillarida O`zbekistonda vujudga kelgan?</h2>
+                <ul>
+                    <li><strong>A. Baxshillochilar;</strong></li>
+                    <li>B. Bahoiylar;</li>
+                    <li>C. Ahmadiylar;</li>
+                    <li>D. Bobiylar.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Baxshillochilar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>84. Quyidagilardan qaysi biri milliy dinlarga kirmaydi?</h2>
+                <ul>
+                    <li>A. Yahudiylik;</li>
+                    <li>B. Hinduizm;</li>
+                    <li>C. Sintoizm;</li>
+                    <li><strong>D. Buddaviylik.</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Buddaviylik.</p>
+            </div>
+            
+            <div class="question">
+                <h2>85. Zardushtiylikning oliy xudosini toping?</h2>
+                <ul>
+                    <li><strong>A. Ahuramazda;</strong></li>
+                    <li>B. Mitra;</li>
+                    <li>C. Anaxita;</li>
+                    <li>D. Axriman.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Ahuramazda;</p>
+            </div>
+            
+            <div class="question">
+                <h2>86. Qaysi din ta`limotida “to`rt haqiqat” mavjud?</h2>
+                <ul>
+                    <li>A. Xristianlik;</li>
+                    <li><strong>B. Buddaviylik;</strong></li>
+                    <li>C. Yahudiylik;</li>
+                    <li>D. Hinduizm.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Buddaviylik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>87. “Tripitaka” qaysi dinning muqaddas manbasi hisoblanadi?</h2>
+                <ul>
+                    <li>A. Xristianlik;</li>
+                    <li><strong>B. Buddaviylik;</strong></li>
+                    <li>C. Yahudiylik;</li>
+                    <li>D. Hinduizm.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Buddaviylik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>88. Pul evaziga gunoxlarni kechirish - indulgensiya haqidagi ta`limot qaysi dinda mavjud?</h2>
+                <ul>
+                    <li><strong>A. Xristianlik;</strong></li>
+                    <li>B. Buddaviylik;</li>
+                    <li>C. Yahudiylik;</li>
+                    <li>D. Hinduizm.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Xristianlik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>89. “Al-jome` as-Sahih” nomli hadislar to`plami muallifini toping?</h2>
+                <ul>
+                    <li>A. At-Termiziy;</li>
+                    <li><strong>B. Al-Buxoriy;</strong></li>
+                    <li>C. Ibn Moja;</li>
+                    <li>D. Imom Muslim</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Al-Buxoriy;</p>
+            </div>
+            
+            <div class="question">
+                <h2>90. Quyidagi qaysi muqaddas kitob 23 yil davomida nozil bo`lgan?</h2>
+                <ul>
+                    <li>A. Tripiotaka;</li>
+                    <li>B. Injil;</li>
+                    <li><strong>C. Qur`on;</strong></li>
+                    <li>D. Tavrot.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Qur`on;</p>
+            </div>
+            
+            <div class="question">
+                <h2>91. “Tavrot” qaysi payg`mbarga nozil bo`lgan?</h2>
+                <ul>
+                    <li>A. Iso;</li>
+                    <li><strong>B. Muso;</strong></li>
+                    <li>C. Dovud;</li>
+                    <li>D. Sulaymon.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Muso;</p>
+            </div>
+            
+            <div class="question">
+                <h2>92. “Xorijiylar” oqimi kimning xalifalik davrida paydo bo`lgan?</h2>
+                <ul>
+                    <li>A. Abu Bakr Siddiq;</li>
+                    <li>B. Umar ibn Xattob;</li>
+                    <li>C. Usmon ibn Affon;</li>
+                    <li><strong>D. Ali ibn Abu Tolib;</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Ali ibn Abu Tolib;</p>
+            </div>
+            
+            <div class="question">
+                <h2>93. “ Shialik” yo`nalishi kimning xalifalik davrida paydo bo`lgan?</h2>
+                <ul>
+                    <li>A. Abu Bakr Siddiq;</li>
+                    <li>B. Umar ibn Xattob;</li>
+                    <li>C. Usmon ibn Affon;</li>
+                    <li><strong>D. Ali ibn Abu Tolib;</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Ali ibn Abu Tolib;</p>
+            </div>
+            
+            <div class="question">
+                <h2>94. Musulmonlarning 47 foizdan ko`prog`i ergashadigan mazhab nomini toping?</h2>
+                <ul>
+                    <li>A. Molikiy;</li>
+                    <li>B. Hanbaliy;</li>
+                    <li>C. Shofeiy;</li>
+                    <li><strong>D. Hanafiy.</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Hanafiy.</p>
+            </div>
+            
+            <div class="question">
+                <h2>95. Qaysi mazhabboshi «al-Muvatto» nomli hadis ilmiga oid to‘pam muallifi hisoblanadi?</h2>
+                <ul>
+                    <li><strong>A. Molikiy;</strong></li>
+                    <li>B. Hanbaliy;</li>
+                    <li>C. Shofeiy;</li>
+                    <li>D. Hanafiy.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Molikiy;</p>
+            </div>
+            
+            <div class="question">
+                <h2>96. “dil ba yoru, dast ba kor” g`oyasini ilgari surgan tasavvuf vakilini toping?</h2>
+                <ul>
+                    <li>A. Ahmad Yassaviy;</li>
+                    <li>B. Najmiddin Kubro;</li>
+                    <li><strong>C. Bahouddin Naqshband;</strong></li>
+                    <li>D. Abdulqodir Jiyloniy.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: C. Bahouddin Naqshband;</p>
+            </div>
+            
+            <div class="question">
+                <h2>97. Xorazmshohlar davlatida paydo bo`lgan va tarqalgan tariqatni toping?</h2>
+                <ul>
+                    <li>A. Yassaviylik;</li>
+                    <li><strong>B. Kubroviylik;</strong></li>
+                    <li>C. Naqshbandiylik;</li>
+                    <li>D. Jiyloniylik.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Kubroviylik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>98. “Iyegov shohidlari” qaysi din negizida paydo bo`lgan konfessiya hisoblanadi?</h2>
+                <ul>
+                    <li><strong>A. Xristianlik;</strong></li>
+                    <li>B. Buddaviylik;</li>
+                    <li>C. Yahudiylik;</li>
+                    <li>D. Hinduizm</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A. Xristianlik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>99. Qaysi so`z «yuborish», «vazifa topshirish» degan ma`noni anglatadi?</h2>
+                <ul>
+                    <li>A. Sekta;</li>
+                    <li><strong>B. Missinerlik;</strong></li>
+                    <li>C. Tolerantlik;</li>
+                    <li>D. Konfessiya.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B. Missinerlik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>100. Quyidagi harakatlardan qaysi birining faoliyati O`zbekistonda kuzatilmagan?</h2>
+                <ul>
+                    <li>A. Marifatchilar;</li>
+                    <li>B. Baxshillochilar;</li>
+                    <li>C. Shohidiylar;</li>
+                    <li><strong>D. Ahmadiylik.</strong></li>
+                </ul>
+                <p class="correct">To'g'ri javob: D. Ahmadiylik;</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Ensure the script runs in an HTML environment
+        document.addEventListener("DOMContentLoaded", function () {
+            function filterQuestions() {
+                const searchInput = document.getElementById('search').value.toLowerCase();
+                const questions = document.querySelectorAll('.question');
+
+                questions.forEach((question) => {
+                    const text = question.textContent.toLowerCase();
+                    question.style.display = text.includes(searchInput) ? 'block' : 'none';
+                });
+            }
+
+            document.getElementById('search').addEventListener('input', filterQuestions);
+        });
+    </script>
+</body>
+</html>
